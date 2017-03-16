@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 @import './style/layout.scss';
 #app {
-  font-family: 'Montserrat,Segoe UI,Microsoft Yahei,Helvetica,Arial';
+  // font-family: 'Montserrat,Segoe UI,Microsoft Yahei,Helvetica,Arial';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow:hidden;
@@ -42,7 +42,7 @@ export default {
     width: 100%;
     min-height: 100vh;
     will-change: transform;
-    transition: transform .5s;
+    transition: transform .5s ease-in-out;
 }
 .container.offset{
     transform: translate3d(240px,0,0);

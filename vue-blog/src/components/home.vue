@@ -1,6 +1,6 @@
 <template>
-    <div class="content-view">
-        <img src="../assets/imgs/gobang_local.c8327.jpg" class="bg-image" alt="background-img">
+    <div class="home-view">
+        <div class="first-screen"></div>
     </div>
 </template>
 
@@ -11,5 +11,19 @@ export default {
 </script>
 
 <style lang="scss" scope>
-
+.home-view{
+    position:relateve;
+    flex:1;
+}
+.first-screen{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    background-image: url('../assets/imgs/gobang_local.c8327.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
 </style>

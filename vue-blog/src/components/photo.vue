@@ -1,5 +1,7 @@
 <template>
-    <h1>摄影</h1>
+    <div class="content-view">
+        <img src="../assets/imgs/gobang_local.c8327.jpg" class="bg-image" alt="background-img">
+    </div>
 </template>
 
 <script>

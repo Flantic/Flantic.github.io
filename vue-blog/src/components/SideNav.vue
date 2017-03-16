@@ -10,14 +10,14 @@
             </div>
             <ul class="menu-list">
                 <li class="line"></li>
-                <li><router-link to="/" exact class="link"><i class="icon icon-start"></i>Home</router-link></li>
-                <li><router-link to="/article" class="link"><i class="icon icon-article"></i>Article</router-link></li>
-                <li><router-link to="/photo" class="link"><i class="icon icon-camera"></i>Photo</router-link></li>
+                <li @click='sideNavStatusflase'><router-link to="/" exact class="link"><i class="icon icon-start"></i>Home</router-link></li>
+                <li @click='sideNavStatusflase'><router-link to="/article" class="link"><i class="icon icon-article"></i>Article</router-link></li>
+                <li @click='sideNavStatusflase'><router-link to="/photo" class="link"><i class="icon icon-camera"></i>Photo</router-link></li>
                 <li class="line"></li>
                 <li class="title">FIND ME</li>
-                <li><a href="" class="link"><i class="icon icon-github"></i>Gayhub</a></li>
-                <li><a href="" class="link"><i class="icon icon-user"></i>About Me</a></li>
-                <li><a href="" class="link"><i class="icon icon-code"></i>My code</a></li>
+                <li @click='sideNavStatusflase'><a href="" class="link"><i class="icon icon-github"></i>Gayhub</a></li>
+                <li @click='sideNavStatusflase'><a href="" class="link"><i class="icon icon-user"></i>About Me</a></li>
+                <li @click='sideNavStatusflase'><a href="" class="link"><i class="icon icon-code"></i>My code</a></li>
             </ul>
         </div>
 </template>
@@ -36,7 +36,7 @@ export default {
         }
     },
     methods:{
-         ...mapMutations(['sideNavSwitchStatus'])
+         ...mapMutations(['sideNavSwitchStatus','sideNavStatusflase'])
     },
     computed: {
         ...mapState({
@@ -58,7 +58,7 @@ export default {
     background-color: #232323;
     box-shadow: 2px 0 35px rgba(0,0,0,.7);
     transform: translate3d(-240px,0,0);
-    transition: transform .5s;
+    transition: transform .5s ease-in-out;
     z-index: 99;
     .menu-btn{
         visibility: visible;
@@ -71,9 +71,15 @@ export default {
         height: 34px;
         line-height: 34px;
         transform: translate3d(-100px,0,0);
-        transition: all .5s;
+        transition: all .5s ease-in-out;;
         z-index: 99;
-        background:#000;
+        border-width:1px;
+        border-style:silid;
+        border-color:#fff;
+        background-color: rgba(10,22,51,.36);
+        // &:hover{
+        //     border-color:#fff;
+        // }
     }
 }
 .side-nav.is-open{ 

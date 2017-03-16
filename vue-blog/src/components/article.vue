@@ -1,5 +1,7 @@
 <template>
-    <h1>文章</h1>
+    <div class="content-view">
+        <img src="../assets/imgs/bg.c1981.jpg" class="bg-image" alt="background-img">
+    </div>
 </template>
 
 <script>
