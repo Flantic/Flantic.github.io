@@ -1,0 +1,168 @@
+@import './icon.scss';
+@import './reset.scss';
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* page-width [页面宽度]*/
+
+.page-1500 {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.page-1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.page-1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 780px) {
+    .page-1500,
+    .page-1200,
+    .page-1000 {
+        width: 100% !important;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* float [左右浮动]*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.t-fl {
+    text-align: left;
+}
+
+.t-fr {
+    text-align: right;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* color [通用颜色]*/
+
+.blue {
+    color: #3498db;
+}
+
+.red {
+    color: #e74c3c;
+}
+
+.green {
+    color: #2ecc71;
+}
+
+.green1 {
+    color: #1abc9c;
+}
+
+.yellow {
+    color: #f1c40f;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* frequently used margin [常用边距]*/
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mb15 {
+    margin-bottom: 15px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* clearfix [清除浮动]*/
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* text-hidden [单行文字溢出隐藏]*/
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    *width: 100%;
+    /*IE/7/6*/
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* box-center [容器上下左右居中]*/
+
+.box-center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+.body-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 999;
+    overflow: hidden;
+    display: none;
+}
