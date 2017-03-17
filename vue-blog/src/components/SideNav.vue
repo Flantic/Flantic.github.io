@@ -187,6 +187,7 @@ export default {
     li.title{
         text-transform: uppercase;
         margin: 0 20px;
+        color:#fff;
         opacity: .7;
     }
     li.active{

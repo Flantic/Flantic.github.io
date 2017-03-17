@@ -1,6 +1,6 @@
 <template>
     <div class="content-view">
-        <img src="../assets/imgs/gobang_local.c8327.jpg" class="bg-image" alt="background-img">
+        <img src="../assets/imgs/factory.45129.jpg" class="bg-image" alt="background-img">
     </div>
 </template>
 

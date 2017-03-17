@@ -2,7 +2,7 @@ require('./check-versions')()
 
 var config = require('../config')
 if (!process.env.NODE_ENV) {
-  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
+    process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
 var opn = require('opn')
@@ -14,38 +14,89 @@ var webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
-// automatically open browser, if not set will be false
+    // automatically open browser, if not set will be false
 var autoOpenBrowser = !!config.dev.autoOpenBrowser
-// Define HTTP proxies to your custom API backend
-// https://github.com/chimurai/http-proxy-middleware
+    // Define HTTP proxies to your custom API backend
+    // https://github.com/chimurai/http-proxy-middleware
 var proxyTable = config.dev.proxyTable
 
 var app = express()
 var compiler = webpack(webpackConfig)
-
+var obj = [{
+        "title": "这是第一个文章的title名字",
+        "body": "######这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容",
+        "author": "Flantic",
+        "time": "2018年-11月-2日",
+        "zan": 89,
+        "label": [
+            "mui",
+            "react",
+            "javascript"
+        ]
+    },
+    {
+        "title": "这是第二个文章的title名字",
+        "body": ">这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容",
+        "author": "Flantic",
+        "time": "2017年-1月-14日",
+        "zan": 23,
+        "label": [
+            "mui",
+            "react",
+            "javascript"
+        ]
+    },
+    {
+        "title": "这是第三个文章的title名字",
+        "body": "<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>",
+        "author": "Flantic",
+        "time": "2016年-5月-6日",
+        "zan": 19,
+        "label": [
+            "mui",
+            "react",
+            "javascript"
+        ]
+    },
+    {
+        "title": "这是第四个文章的title名字",
+        "body": "<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>",
+        "author": "Flantic",
+        "time": "2013年-1月-14日",
+        "zan": 55,
+        "label": [
+            "mui",
+            "react",
+            "javascript"
+        ]
+    }
+]
+app.get('/article/data', function(req, res) {
+    res.send(obj)
+})
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  quiet: true
+    publicPath: webpackConfig.output.publicPath,
+    quiet: true
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: () => {}
-})
-// force page reload when html-webpack-plugin template changes
-compiler.plugin('compilation', function (compilation) {
-  compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-    hotMiddleware.publish({ action: 'reload' })
-    cb()
-  })
+        log: () => {}
+    })
+    // force page reload when html-webpack-plugin template changes
+compiler.plugin('compilation', function(compilation) {
+    compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
+        hotMiddleware.publish({ action: 'reload' })
+        cb()
+    })
 })
 
 // proxy api requests
-Object.keys(proxyTable).forEach(function (context) {
-  var options = proxyTable[context]
-  if (typeof options === 'string') {
-    options = { target: options }
-  }
-  app.use(proxyMiddleware(options.filter || context, options))
+Object.keys(proxyTable).forEach(function(context) {
+    var options = proxyTable[context]
+    if (typeof options === 'string') {
+        options = { target: options }
+    }
+    app.use(proxyMiddleware(options.filter || context, options))
 })
 
 // handle fallback for HTML5 history API
@@ -64,18 +115,18 @@ app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
 
-devMiddleware.waitUntilValid(function () {
-  console.log('> Listening at ' + uri + '\n')
+devMiddleware.waitUntilValid(function() {
+    console.log('> Listening at ' + uri + '\n')
 })
 
-module.exports = app.listen(port, function (err) {
-  if (err) {
-    console.log(err)
-    return
-  }
+module.exports = app.listen(port, function(err) {
+    if (err) {
+        console.log(err)
+        return
+    }
 
-  // when env is testing, don't need open it
-  if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-    opn(uri)
-  }
+    // when env is testing, don't need open it
+    if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
+        opn(uri)
+    }
 })

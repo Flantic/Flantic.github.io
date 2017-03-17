@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .home-view{
     position:relateve;
     flex:1;
