@@ -1,6 +1,10 @@
 <template>
     <div class="home-view">
-        <div class="first-screen"></div>
+        <div class="first-screen">
+            <div class="text-box">
+                <h1>不忘初心 方得始终</h1>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -25,5 +29,15 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+}
+.text-box{
+    position:absolute;
+    right:200px;
+    top:100px;
+    color:#fff;
+    h1{
+        font-weight:700;
+        text-shadow:2px 2px 3px rgba(120,120,120,.9)
+    }
 }
 </style>

@@ -227,17 +227,23 @@ export default {
     }
 }
 @media screen and (max-width: 1320px){
-	.page-1200{ width: 100%; padding:30px;}
+	.page-1200{ width: 100%; padding:4%;}
 }
 @media screen and (max-width: 500px){
 	.article-list-item{
 		margin-bottom: 3%;
-		.article-cont{
-			padding: 4% 4% 30px;
+	}
+	.article-cont{
+		padding: 4% 4% 30px;
+		.article-title{
+			font-size:1.5em;
 		}
-		.article-foot{
-			.time{ display: none;}
+		.article-body{
+			min-height:120px;
 		}
+	}
+	.article-foot{
+		.time{ display: none;}
 	}
 }
 </style>

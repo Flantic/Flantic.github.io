@@ -15,9 +15,9 @@
                 <li @click='sideNavStatusflase'><router-link to="/photo" class="link"><i class="icon icon-camera"></i>Photo</router-link></li>
                 <li class="line"></li>
                 <li class="title">FIND ME</li>
-                <li @click='sideNavStatusflase'><a href="" class="link"><i class="icon icon-github"></i>Gayhub</a></li>
-                <li @click='sideNavStatusflase'><a href="" class="link"><i class="icon icon-user"></i>About Me</a></li>
-                <li @click='sideNavStatusflase'><a href="" class="link"><i class="icon icon-code"></i>My code</a></li>
+                <li @click='sideNavStatusflase'><a href="/" class="link"><i class="icon icon-github"></i>Gayhub</a></li>
+                <li @click='sideNavStatusflase'><a href="/" class="link"><i class="icon icon-user"></i>About Me</a></li>
+                <li @click='sideNavStatusflase'><a href="/" class="link"><i class="icon icon-code"></i>My code</a></li>
             </ul>
         </div>
 </template>
@@ -55,7 +55,8 @@ export default {
     width: 240px;
     height: 100vh;
     padding: 50px 0;
-    background-color: #232323;
+    background: linear-gradient(30deg,#141e30,#243b55);
+    // background-color: #232323;
     box-shadow: 2px 0 35px rgba(0,0,0,.7);
     transform: translate3d(-240px,0,0);
     transition: transform .5s ease-in-out;
@@ -74,12 +75,12 @@ export default {
         transition: all .5s ease-in-out;;
         z-index: 99;
         border-width:1px;
-        border-style:silid;
-        border-color:#fff;
+        border-style:solid;
+        border-color:transparent;
         background-color: rgba(10,22,51,.36);
-        // &:hover{
-        //     border-color:#fff;
-        // }
+        &:hover{
+            border-color:#fff;
+        }
     }
 }
 .side-nav.is-open{ 
@@ -129,6 +130,7 @@ export default {
 }
 .menu-btn.is-outside{
     right:-200px;
+    color:#fff;
 }
 .head-img{
     margin: 0 auto;
@@ -149,6 +151,20 @@ export default {
         font-weight: 700;
         color: #eee;
     }
+}
+@media screen and(max-height:760px){
+    .head-img{ 
+        text-align:center;
+        .img-box{
+            display:inline-block;
+            height:100px;
+            width:100px;
+        }
+        .name{ font-size:20px;}
+    }
+}
+@media screen and(max-width:325px){
+    .head-img{ display:none;}
 }
 .menu-list{
     display:flex;
